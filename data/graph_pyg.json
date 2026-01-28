@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "nodeTypes": [
+      "person",
+      "paper",
+      "institution"
+    ],
+    "edgeTypes": [
+      [
+        "person",
+        "authored",
+        "paper"
+      ],
+      [
+        "person",
+        "affiliated",
+        "institution"
+      ]
+    ]
+  },
+  "nodeFeatures": {
+    "person": [
+      [
+        21,
+        20
+      ],
+      [
+        31,
+        500
+      ]
+    ],
+    "paper": [
+      [
+        10
+      ],
+      [
+        9
+      ]
+    ],
+    "institution": [
+      [
+        1
+      ]
+    ]
+  },
+  "nodeLabels": {
+    "person": [
+      "Person 1",
+      "Person 2"
+    ],
+    "paper": [
+      "Paper 1",
+      "Paper 2"
+    ],
+    "institution": [
+      "Institution 1"
+    ]
+  },
+  "nodeMapping": {
+    "person": {
+      "node_1": 0,
+      "node_4": 1
+    },
+    "paper": {
+      "node_2": 0,
+      "node_6": 1
+    },
+    "institution": {
+      "node_5": 0
+    }
+  },
+  "edgeIndices": {
+    "person,authored,paper": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "person,affiliated,institution": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  "edgeFeatures": {
+    "person,authored,paper": [
+      [
+        5
+      ],
+      [
+        4
+      ]
+    ],
+    "person,affiliated,institution": [
+      [
+        6
+      ]
+    ]
+  }
+}

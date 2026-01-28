@@ -1,0 +1,205 @@
+{
+  "metadata": {
+    "nodeTypes": [
+      "person",
+      "company",
+      "region"
+    ],
+    "edgeTypes": [
+      [
+        "person",
+        "can_work",
+        "company"
+      ],
+      [
+        "company",
+        "serves",
+        "region"
+      ]
+    ],
+    "nodeTypeSchemas": [
+      {
+        "id": "person",
+        "name": "Person",
+        "color": "#22d3ee",
+        "attributes": [
+          {
+            "name": "age",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "height",
+            "type": "number",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "company",
+        "name": "Company",
+        "color": "#fb923c",
+        "attributes": [
+          {
+            "name": "machines",
+            "type": "number",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "name": "Region",
+        "color": "#f87171",
+        "attributes": [
+          {
+            "name": "area",
+            "type": "number",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "edgeTypeSchemas": [
+      {
+        "id": "can_work",
+        "name": "can_work",
+        "color": "#fb923c",
+        "sourceTypes": [
+          "person"
+        ],
+        "targetTypes": [
+          "company"
+        ],
+        "attributes": []
+      },
+      {
+        "id": "serves",
+        "name": "serves",
+        "color": "#f87171",
+        "sourceTypes": [
+          "company"
+        ],
+        "targetTypes": [
+          "region"
+        ],
+        "attributes": [
+          {
+            "name": "hours",
+            "type": "number",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "nodeFeatures": {
+    "person": [
+      [
+        21,
+        191
+      ],
+      [
+        30,
+        180
+      ],
+      [
+        45,
+        171
+      ]
+    ],
+    "company": [
+      [
+        30
+      ],
+      [
+        40
+      ],
+      [
+        10
+      ]
+    ],
+    "region": [
+      [
+        900
+      ],
+      [
+        500
+      ]
+    ]
+  },
+  "nodeLabels": {
+    "person": [
+      "Person 1",
+      "Person 2",
+      "Person 3"
+    ],
+    "company": [
+      "Company 1",
+      "Company 2",
+      "Company 3"
+    ],
+    "region": [
+      "Region 1",
+      "Region 2"
+    ]
+  },
+  "nodeMapping": {
+    "person": {
+      "node_1": 0,
+      "node_2": 1,
+      "node_3": 2
+    },
+    "company": {
+      "node_4": 0,
+      "node_5": 1,
+      "node_6": 2
+    },
+    "region": {
+      "node_7": 0,
+      "node_8": 1
+    }
+  },
+  "edgeIndices": {
+    "person,can_work,company": [
+      [
+        0,
+        1,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        2,
+        1
+      ]
+    ],
+    "company,serves,region": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ]
+  },
+  "edgeFeatures": {
+    "person,can_work,company": [],
+    "company,serves,region": [
+      [
+        10
+      ],
+      [
+        20
+      ],
+      [
+        40
+      ]
+    ]
+  }
+}
