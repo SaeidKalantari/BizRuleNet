@@ -1,0 +1,153 @@
+{
+  "cypherScript": "CREATE CONSTRAINT IF NOT EXISTS FOR (n:person) REQUIRE n.id IS UNIQUE;\nCREATE CONSTRAINT IF NOT EXISTS FOR (n:company) REQUIRE n.id IS UNIQUE;\nCREATE CONSTRAINT IF NOT EXISTS FOR (n:region) REQUIRE n.id IS UNIQUE;\n\nCREATE (:person {id: \"node_1\", label: \"Person 1\", age: 21, height: 191});\nCREATE (:person {id: \"node_2\", label: \"Person 2\", age: 30, height: 180});\nCREATE (:person {id: \"node_3\", label: \"Person 3\", age: 45, height: 171});\nCREATE (:company {id: \"node_4\", label: \"Company 1\", machines: 30});\nCREATE (:company {id: \"node_5\", label: \"Company 2\", machines: 40});\nCREATE (:company {id: \"node_6\", label: \"Company 3\", machines: 10});\nCREATE (:region {id: \"node_7\", label: \"Region 1\", area: 900});\nCREATE (:region {id: \"node_8\", label: \"Region 2\", area: 500});\n\nMATCH (a {id: \"node_1\"}), (b {id: \"node_4\"}) CREATE (a)-[:CAN_WORK]->(b);\nMATCH (a {id: \"node_2\"}), (b {id: \"node_4\"}) CREATE (a)-[:CAN_WORK]->(b);\nMATCH (a {id: \"node_3\"}), (b {id: \"node_6\"}) CREATE (a)-[:CAN_WORK]->(b);\nMATCH (a {id: \"node_3\"}), (b {id: \"node_5\"}) CREATE (a)-[:CAN_WORK]->(b);\nMATCH (a {id: \"node_4\"}), (b {id: \"node_7\"}) CREATE (a)-[:SERVES {hours: 10}]->(b);\nMATCH (a {id: \"node_5\"}), (b {id: \"node_8\"}) CREATE (a)-[:SERVES {hours: 20}]->(b);\nMATCH (a {id: \"node_6\"}), (b {id: \"node_8\"}) CREATE (a)-[:SERVES {hours: 40}]->(b);",
+  "nodes": [
+    {
+      "id": "node_1",
+      "labels": [
+        "person"
+      ],
+      "properties": {
+        "id": "node_1",
+        "label": "Person 1",
+        "age": 21,
+        "height": 191
+      }
+    },
+    {
+      "id": "node_2",
+      "labels": [
+        "person"
+      ],
+      "properties": {
+        "id": "node_2",
+        "label": "Person 2",
+        "age": 30,
+        "height": 180
+      }
+    },
+    {
+      "id": "node_3",
+      "labels": [
+        "person"
+      ],
+      "properties": {
+        "id": "node_3",
+        "label": "Person 3",
+        "age": 45,
+        "height": 171
+      }
+    },
+    {
+      "id": "node_4",
+      "labels": [
+        "company"
+      ],
+      "properties": {
+        "id": "node_4",
+        "label": "Company 1",
+        "machines": 30
+      }
+    },
+    {
+      "id": "node_5",
+      "labels": [
+        "company"
+      ],
+      "properties": {
+        "id": "node_5",
+        "label": "Company 2",
+        "machines": 40
+      }
+    },
+    {
+      "id": "node_6",
+      "labels": [
+        "company"
+      ],
+      "properties": {
+        "id": "node_6",
+        "label": "Company 3",
+        "machines": 10
+      }
+    },
+    {
+      "id": "node_7",
+      "labels": [
+        "region"
+      ],
+      "properties": {
+        "id": "node_7",
+        "label": "Region 1",
+        "area": 900
+      }
+    },
+    {
+      "id": "node_8",
+      "labels": [
+        "region"
+      ],
+      "properties": {
+        "id": "node_8",
+        "label": "Region 2",
+        "area": 500
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "edge_node_1_node_4_1769638781390_0",
+      "type": "can_work",
+      "startNodeId": "node_1",
+      "endNodeId": "node_4",
+      "properties": {}
+    },
+    {
+      "id": "edge_node_2_node_4_1769638781390_1",
+      "type": "can_work",
+      "startNodeId": "node_2",
+      "endNodeId": "node_4",
+      "properties": {}
+    },
+    {
+      "id": "edge_node_3_node_6_1769638781391_2",
+      "type": "can_work",
+      "startNodeId": "node_3",
+      "endNodeId": "node_6",
+      "properties": {}
+    },
+    {
+      "id": "edge_node_3_node_5_1769638781391_3",
+      "type": "can_work",
+      "startNodeId": "node_3",
+      "endNodeId": "node_5",
+      "properties": {}
+    },
+    {
+      "id": "edge_node_4_node_7_1769638781391_0",
+      "type": "serves",
+      "startNodeId": "node_4",
+      "endNodeId": "node_7",
+      "properties": {
+        "hours": 10
+      }
+    },
+    {
+      "id": "edge_node_5_node_8_1769638781391_1",
+      "type": "serves",
+      "startNodeId": "node_5",
+      "endNodeId": "node_8",
+      "properties": {
+        "hours": 20
+      }
+    },
+    {
+      "id": "edge_node_6_node_8_1769638781391_2",
+      "type": "serves",
+      "startNodeId": "node_6",
+      "endNodeId": "node_8",
+      "properties": {
+        "hours": 40
+      }
+    }
+  ]
+}
